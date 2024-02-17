@@ -55,4 +55,11 @@ dependencies {
     implementation(libs.squareup.retrofit)
     implementation(libs.squareup.converter.gson)
     implementation(libs.squareup.logging.interceptor)
+
+    // viewpager2
+    implementation(libs.viewpager2)
+    implementation(libs.dotsindicator)
+
+    // glide
+    implementation(libs.bumptech.glide)
 }
