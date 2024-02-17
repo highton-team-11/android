@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    android:background="@drawable/white_80_1_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="14dp">
+
+    <TextView
+        android:id="@+id/tv_career"
+        style="@style/medium_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="농업 축사 관련인"
+        android:textColor="@color/gray80" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1f" />
+
+    <ImageView
+        android:id="@+id/iv_more_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more_details" />
+
+</LinearLayout>
