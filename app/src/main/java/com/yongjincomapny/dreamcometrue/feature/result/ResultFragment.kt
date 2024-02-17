@@ -1,17 +1,16 @@
 package com.yongjincomapny.dreamcometrue.feature.result
 
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
+import com.yongjincomapny.dreamcometrue.common.view.setOnDebounceClickListener
 import com.yongjincomapny.dreamcometrue.data.remote.api.RetrofitClient
 import com.yongjincomapny.dreamcometrue.data.remote.request.FetchRecommendJobsRequest
 import com.yongjincomapny.dreamcometrue.databinding.FragmentResultBinding
 import com.yongjincomapny.dreamcometrue.feature.result.adapter.ResultAdapter
-import com.yongjincomapny.dreamcometrue.feature.test.adapter.strongpoint.StrongPointAdapter
-import com.yongjincomapny.dreamcometrue.feature.test.adapter.strongpoint.StrongPointItem
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ResultFragment : BaseFragment<FragmentResultBinding>(
@@ -29,18 +28,27 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(
         resultAdapter = ResultAdapter()
         binding.rvJob.adapter = resultAdapter
 
+        binding.btnNext.setOnDebounceClickListener {
+            //TODO: Home으로 navigate하는 코드.
+        }
 
         lifecycleScope.launch() {
-            runCatching {
-                jobApi.fetchRecommendJobs(
-                    FetchRecommendJobsRequest(
-                        strongList!!.toList(), interestList!!.toList()
-                    )
-                )
-            }.onSuccess {
-                binding.tvMostFitJob.text = it.first().name
-                var otherRecommendJobs = it.drop(1)
-                resultAdapter?.setData(otherRecommendJobs)
+            if (strongList != null) {
+                if (interestList != null) {
+                    runCatching {
+                        jobApi.fetchRecommendJobs(
+                            FetchRecommendJobsRequest(
+                                strongList.toList(), interestList.toList()
+                            )
+                        )
+                    }.onSuccess {
+                        binding.tvMostFitJob.text = it.first().name
+                        var otherRecommendJobs = it.drop(1)
+                        resultAdapter?.setData(otherRecommendJobs)
+                    }.onFailure {
+                        Toast.makeText(requireContext(), "다시 시도해주세요!", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
     }

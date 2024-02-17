@@ -8,6 +8,8 @@ import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
 import com.yongjincomapny.dreamcometrue.common.view.GridSpacingItemDecoration
 import com.yongjincomapny.dreamcometrue.common.view.fromDpToPx
 import com.yongjincomapny.dreamcometrue.common.view.setOnDebounceClickListener
+import com.yongjincomapny.dreamcometrue.data.repository.Repository
+import com.yongjincomapny.dreamcometrue.data.repository.RepositoryImpl
 import com.yongjincomapny.dreamcometrue.databinding.FragmentThirdSurveyBinding
 import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.FirstCategoryAdapter
 import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.CategoryItem
@@ -32,6 +34,7 @@ class ThirdSurveyFragment : BaseFragment<FragmentThirdSurveyBinding>(
         }
 
         binding.btnNext.setOnDebounceClickListener {
+
             findNavController().navigate(R.id.action_thirdSurveyFragment_to_resultFragment, bundleOf(
                 "strongList" to strongList, "interestList" to interestList.toTypedArray()
             ))
@@ -130,60 +133,48 @@ class ThirdSurveyFragment : BaseFragment<FragmentThirdSurveyBinding>(
     override fun onFirstCategoryItemSelected(item: CategoryItem) {
         if (item.isSelected) {
             interestList.add(item.text)
-            println("$interestList")
         } else {
             interestList.removeLast()
-            println("$interestList")
         }
     }
 
     override fun onSecondCategoryItemSelected(item: CategoryItem) {
         if (item.isSelected) {
             interestList.add(item.text)
-            println("$interestList")
         } else {
             interestList.removeLast()
-            println("$interestList")
         }
     }
 
     override fun onThirdCategoryItemSelected(item: CategoryItem) {
         if (item.isSelected) {
             interestList.add(item.text)
-            println("$interestList")
         } else {
             interestList.removeLast()
-            println("$interestList")
         }
     }
 
     override fun onFourthCategoryItemSelected(item: CategoryItem) {
         if (item.isSelected) {
             interestList.add(item.text)
-            println("$interestList")
         } else {
             interestList.removeLast()
-            println("$interestList")
         }
     }
 
     override fun onFifthCategoryItemSelected(item: CategoryItem) {
         if (item.isSelected) {
             interestList.add(item.text)
-            println("$interestList")
         } else {
             interestList.removeLast()
-            println("$interestList")
         }
     }
 
     override fun onSixthCategoryItemSelected(item: CategoryItem) {
         if (item.isSelected) {
             interestList.add(item.text)
-            println("$interestList")
         } else {
             interestList.removeLast()
-            println("$interestList")
         }
     }
 }

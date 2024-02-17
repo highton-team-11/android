@@ -57,10 +57,8 @@ class SecondSurveyFragment : BaseFragment<FragmentSecondSurveyBinding>(
     override fun onItemSelected(item: StrongPointItem) {
         if (item.isSelected) {
            strongList.add(item.text)
-            println("$strongList")
         } else {
             strongList.removeLast()
-            println("$strongList")
         }
     }
 }
