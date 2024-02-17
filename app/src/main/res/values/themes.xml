@@ -5,5 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Dreamcometrue" parent="Base.Theme.Dreamcometrue" />
+    <style name="Theme.Dreamcometrue" parent="Base.Theme.Dreamcometrue" >
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>
