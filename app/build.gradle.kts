@@ -22,8 +22,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -55,4 +54,7 @@ dependencies {
     implementation(libs.squareup.retrofit)
     implementation(libs.squareup.converter.gson)
     implementation(libs.squareup.logging.interceptor)
+
+    // datastore
+    implementation(libs.androidx.datastore)
 }
