@@ -62,4 +62,7 @@ dependencies {
 
     // glide
     implementation(libs.bumptech.glide)
+
+    // Picasso
+    implementation(libs.squareup.picasso)
 }
