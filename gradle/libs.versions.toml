@@ -15,6 +15,7 @@ squareup-retrofit = "2.9.0"
 squareup-logging-interceptor = "4.12.0"
 viewpager2 = "1.0.0"
 glide = "4.16.0"
+squareup-picasso = "2.71828"
 
 androidx-datastore = "1.0.0"
 
@@ -36,6 +37,7 @@ squareup-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging
 viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
 dotsindicator = { group = "com.tbuonomo", name = "dotsindicator", version.ref = "dotsindicator" }
 bumptech-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+squareup-picasso = { group = "com.squareup.picasso", name = "picasso", version.ref = "squareup-picasso" }
 
 
 androidx-datastore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "androidx-datastore"}

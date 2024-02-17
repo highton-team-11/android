@@ -7,20 +7,21 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.yongjincomapny.dreamcometrue.R
-import com.yongjincomapny.dreamcometrue.databinding.ItemHomeBannerImageBinding
+import com.yongjincomapny.dreamcometrue.databinding.ItemHomePostBinding
+import com.yongjincomapny.dreamcometrue.feature.home.model.GetPostResponse
 
-class DetailImageAdapter(
-    private val imageList: List<Int>,
-    private val itemClick: (Int) -> Unit,
-) : RecyclerView.Adapter<DetailImageAdapter.ImageDetailViewHolder>() {
-    inner class ImageDetailViewHolder(private val binding: ItemHomeBannerImageBinding) :
+class HomePostAdapter(
+    private val imageList: List<GetPostResponse>,
+    private val itemClick: (GetPostResponse) -> Unit,
+) : RecyclerView.Adapter<HomePostAdapter.HomePostViewHolder>() {
+    inner class HomePostViewHolder(private val binding: ItemHomePostBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Int) {
+        fun bind(item: GetPostResponse) {
             Log.d("banner recyclerview", "bind: $item")
             Glide.with(itemView)
                 .load(item)
-                .into(binding.imgUrl)
-
+                .into(binding.ivPost)
+            binding.tvTitle.text = "123"
             binding.root.setOnClickListener { itemClick(item) }
         }
     }
@@ -28,8 +29,8 @@ class DetailImageAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
-    ): ImageDetailViewHolder {
-        return ImageDetailViewHolder(
+    ): HomePostViewHolder {
+        return HomePostViewHolder(
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
                 R.layout.item_home_banner_image,
@@ -39,10 +40,7 @@ class DetailImageAdapter(
         )
     }
 
-    override fun onBindViewHolder(
-        holder: ImageDetailViewHolder,
-        position: Int,
-    ) {
+    override fun onBindViewHolder(holder: HomePostViewHolder, position: Int) {
         holder.bind(imageList[position])
     }
 

@@ -62,6 +62,9 @@ dependencies {
     // glide
     implementation(libs.bumptech.glide)
 
+    // Picasso
+    implementation(libs.squareup.picasso)
+
     // datastore
     implementation(libs.androidx.datastore)
 }
