@@ -4,13 +4,11 @@
     <color name="white">#FFFFFFFF</color>
     
     <!-- color system -->
-    <color name="primary">#FFFFD43B</color>
-    <color name="primary60">#FFFFE922</color>
-    <color name="primary10">#FFFFF622</color>
+    <color name="primary">#FFF9CA26</color>
+    <color name="primary60">#FFFFD43B</color>
+    <color name="primary10">#FFFFE922</color>
 
-    <color name="gray90">#FF535353</color>
-    <color name="gray70">#FF9D9D9D</color>
-    <color name="gray50">#FFBFBFBF</color>
-    <color name="gray30">#FFDCDCDC</color>
-    <color name="gray10">#FFF1F1F3</color>
+    <color name="gray90">#FF9C9C9C</color>
+    <color name="gray50">#FFE9E9E9</color>
+    <color name="gray10">#FFE6E6E6</color>
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/firstSurveyFragment">
+
+
+    <fragment
+        android:id="@+id/firstSurveyFragment"
+        android:name="com.yongjincomapny.dreamcometrue.feature.test.FirstSurveyFragment"
+        android:label="FirstSurveyFragment" >
+        <action
+            android:id="@+id/action_firstSurveyFragment_to_secondSurveyFragment"
+            app:destination="@id/secondSurveyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondSurveyFragment"
+        android:name="com.yongjincomapny.dreamcometrue.feature.test.SecondSurveyFragment"
+        android:label="SecondSurveyFragment" />
+</navigation>

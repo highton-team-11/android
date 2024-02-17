@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="1/3"
+            android:text="@string/first_order"
             android:textColor="@color/primary"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/iv_back" />
@@ -46,20 +46,32 @@
             style="@style/medium_20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="이름을 입력해주세요"
+            android:text="@string/enter_name"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/tv_question_order" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_name"
             style="@style/medium_16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:tint="@color/gray30"
+            android:paddingStart="4dp"
             android:layout_marginTop="60dp"
-            android:hint="이름"
+            android:backgroundTint="@color/gray50"
+            android:hint="@string/name"
             app:layout_constraintEnd_toStartOf="@+id/guideline_end"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/tv_question" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/lucy_btn"
+            android:id="@+id/btn_next"
+            android:layout_width="0dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
