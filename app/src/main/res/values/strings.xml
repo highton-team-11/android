@@ -23,4 +23,7 @@
     <!-- survey result -->
     <string name="survey_result">설문 결과</string>
     <string name="nice_fit_job">적성에 잘 맞는 직업들이에요!</string>
+    <string name="i_dont_want_any_job">하고싶은 일이 없다면?</string>
+    <string name="interesting_job">세상에는 이런 직업도 있어요!</string>
+    <string name="find_one_job">구체적으로 어떤걸 하면 좋을까?</string>
 </resources>

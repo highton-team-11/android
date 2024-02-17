@@ -1,5 +1,6 @@
 package com.yongjincomapny.dreamcometrue.feature.home
 
+import android.view.View
 import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
 import com.yongjincomapny.dreamcometrue.databinding.FragmentHomeBinding
@@ -9,6 +10,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun init() {
         val imageAdapter = DetailImageAdapter(listOf(R.drawable.black_50_bg, R.drawable.ic_launcher_background)) {}
         binding.viewpager.adapter = imageAdapter
+        binding.wormDotsIndicator.attachTo(binding.viewpager)
         super.init()
     }
 

@@ -16,7 +16,7 @@ class DetailImageAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Int?) {
             Glide.with(binding.root.context)
-                .load(R.drawable.ic_launcher_background)
+                .load(item)
                 .into(binding.imgUrl)
 
             binding.root.setOnClickListener { itemClick(item!!) }
