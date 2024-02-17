@@ -43,6 +43,6 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.yongjincomapny.dreamcometrue.feature.test.ResultFragment"
+        android:name="com.yongjincomapny.dreamcometrue.feature.result.ResultFragment"
         android:label="ResultFragment" />
 </navigation>
