@@ -9,5 +9,7 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
-    <style name="Theme.Dreamcometrue" parent="Base.Theme.Dreamcometrue" />
+    <style name="Theme.Dreamcometrue" parent="Base.Theme.Dreamcometrue" >
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>
