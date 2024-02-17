@@ -71,7 +71,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingBottom="48dp">
 
                 <ImageView
                     android:id="@+id/iv_first_category"
@@ -132,9 +133,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
-                    android:src="@drawable/ic_chemical"
+                    android:src="@drawable/ic_painter"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rv_first_category" />
+                    app:layout_constraintTop_toBottomOf="@+id/rv_second_category" />
 
                 <TextView
                     style="@style/medium_16"
@@ -142,18 +143,102 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:text="예술"
-                    app:layout_constraintBottom_toBottomOf="@+id/iv_second_category"
-                    app:layout_constraintStart_toEndOf="@+id/iv_second_category"
-                    app:layout_constraintTop_toTopOf="@+id/iv_second_category" />
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_third_category"
+                    app:layout_constraintStart_toEndOf="@+id/iv_third_category"
+                    app:layout_constraintTop_toTopOf="@+id/iv_third_category" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_second_category"
+                    android:id="@+id/rv_third_category"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_second_category" />
+                    app:layout_constraintTop_toBottomOf="@+id/iv_third_category" />
+
+                <ImageView
+                    android:id="@+id/iv_fourth_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/ic_company"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_third_category" />
+
+                <TextView
+                    style="@style/medium_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="사무"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_fourth_category"
+                    app:layout_constraintStart_toEndOf="@+id/iv_fourth_category"
+                    app:layout_constraintTop_toTopOf="@+id/iv_fourth_category" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_fourth_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_fourth_category" />
+
+                <ImageView
+                    android:id="@+id/iv_fifth_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/ic_pencil"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_fourth_category" />
+
+                <TextView
+                    style="@style/medium_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="교육"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_fifth_category"
+                    app:layout_constraintStart_toEndOf="@+id/iv_fifth_category"
+                    app:layout_constraintTop_toTopOf="@+id/iv_fifth_category" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_fifth_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_fifth_category" />
+
+                <ImageView
+                    android:id="@+id/iv_sixth_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/ic_tree"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_fifth_category" />
+
+                <TextView
+                    style="@style/medium_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="자연"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_sixth_category"
+                    app:layout_constraintStart_toEndOf="@+id/iv_sixth_category"
+                    app:layout_constraintTop_toTopOf="@+id/iv_sixth_category" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_sixth_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_sixth_category" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>

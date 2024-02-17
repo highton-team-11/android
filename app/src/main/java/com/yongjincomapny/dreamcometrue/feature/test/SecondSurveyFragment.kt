@@ -1,10 +1,7 @@
 package com.yongjincomapny.dreamcometrue.feature.test
 
-import android.graphics.Rect
-import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
@@ -12,13 +9,13 @@ import com.yongjincomapny.dreamcometrue.common.view.GridSpacingItemDecoration
 import com.yongjincomapny.dreamcometrue.common.view.fromDpToPx
 import com.yongjincomapny.dreamcometrue.common.view.setOnDebounceClickListener
 import com.yongjincomapny.dreamcometrue.databinding.FragmentSecondSurveyBinding
-import com.yongjincomapny.dreamcometrue.feature.test.adapter.OnItemSelectedListener
-import com.yongjincomapny.dreamcometrue.feature.test.adapter.StrongPointAdapter
-import com.yongjincomapny.dreamcometrue.feature.test.adapter.StrongPointItem
+import com.yongjincomapny.dreamcometrue.feature.test.adapter.strongpoint.OnItemSelectedListener
+import com.yongjincomapny.dreamcometrue.feature.test.adapter.strongpoint.StrongPointAdapter
+import com.yongjincomapny.dreamcometrue.feature.test.adapter.strongpoint.StrongPointItem
 
 class SecondSurveyFragment : BaseFragment<FragmentSecondSurveyBinding>(
     R.layout.fragment_second_survey
-),OnItemSelectedListener {
+), OnItemSelectedListener {
     override fun init() {
         super.init()
 
@@ -46,6 +43,10 @@ class SecondSurveyFragment : BaseFragment<FragmentSecondSurveyBinding>(
         binding.rvStrongPoint.addItemDecoration(
             GridSpacingItemDecoration(spanCount = 2, spacing = 16f.fromDpToPx())
         )
+
+        binding.btnNext.setOnDebounceClickListener {
+            findNavController().navigate(R.id.action_secondSurveyFragment_to_thirdSurveyFragment)
+        }
     }
 
     override fun onItemSelected(item: StrongPointItem) {

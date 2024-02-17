@@ -1,4 +1,4 @@
-package com.yongjincomapny.dreamcometrue.feature.test.adapter
+package com.yongjincomapny.dreamcometrue.feature.test.adapter.category
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.databinding.ItemStrongPointBinding
 
-class StrongPointAdapter(
-    private val items: List<StrongPointItem>,
+class SecondCategoryAdapter(
+    private val items: List<CategoryItem>,
     private val itemSelectedListener: OnItemSelectedListener
 ) :
-    RecyclerView.Adapter<StrongPointAdapter.ViewHolder>() {
+    RecyclerView.Adapter<SecondCategoryAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -28,7 +28,7 @@ class StrongPointAdapter(
     inner class ViewHolder(private val binding: ItemStrongPointBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: StrongPointItem) {
+        fun bind(item: CategoryItem) {
             binding.tvItem.text = item.text
 
             binding.clItem.setOnClickListener {
@@ -43,9 +43,4 @@ class StrongPointAdapter(
             binding.executePendingBindings()
         }
     }
-}
-
-
-interface OnItemSelectedListener {
-    fun onItemSelected(item: StrongPointItem)
 }
