@@ -19,4 +19,6 @@ object RetrofitClient {
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)
         .build()
+
+    fun postApi(): PostApi = retrofit.create(PostApi::class.java)
 }

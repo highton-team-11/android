@@ -20,4 +20,10 @@
     <string name="interesting_job">세상에는 이런 직업도 있어요!</string>
     <string name="find_one_job">구체적으로 어떤걸 하면 좋을까?</string>
     <string name="the_easiest_way_to_find_want_thing">세상에서 가장 쉬운 하고싶은 일 찾는법</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content">내용</string>
+    <string name="writer">저자(닉네임)</string>
+    <string name="title">세상에서 가장 쉬운 하고 싶은 일 찾는 법</string>
+    <string name="date">2023년1월1일</string>
 </resources>

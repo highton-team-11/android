@@ -10,14 +10,17 @@ import android.text.style.URLSpan
 import android.util.Log
 import android.view.View
 import androidx.core.text.HtmlCompat
+import androidx.fragment.app.viewModels
 import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
 import com.yongjincomapny.dreamcometrue.databinding.FragmentHomeBinding
 import com.yongjincomapny.dreamcometrue.feature.ImageGetter
 import com.yongjincomapny.dreamcometrue.feature.home.adapter.DetailImageAdapter
+import com.yongjincomapny.dreamcometrue.feature.home.adapter.HomePostAdapter
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
+    private val viewModel by viewModels<HomeViewModel>()
     override fun init() {
         val imageAdapter = DetailImageAdapter(
             listOf(R.drawable.banner1, R.drawable.banner2, R.drawable.banner3)
@@ -55,9 +58,31 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         super.init()
     }
 
+    private val noWantAdapter = HomePostAdapter(emptyList())
+
     override fun observe() {
+        viewModel.getPostList()
+        viewModel.postList.observe(viewLifecycleOwner) {
+            it.map {
+                when (it.indexa) {
+                    1 -> {
+                        
+                    }
+                    2 -> {
+                        binding.tvTitle2.text = it.title
+                        binding.tvContent2.text = it.content
+                    }
+                    3 -> {
+                        binding.tvTitle3.text = it.title
+                        binding.tvContent3.text = it.content
+                    }
+                }
+            }
+        }
         super.observe()
     }
+
+
 
     private fun displayHtml() {
         // Creating object of ImageGetter class you just created
