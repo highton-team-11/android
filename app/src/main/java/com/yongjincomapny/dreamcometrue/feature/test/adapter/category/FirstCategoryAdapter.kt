@@ -35,8 +35,10 @@ class FirstCategoryAdapter(
                 item.isSelected = !item.isSelected
                 if (item.isSelected) {
                     binding.clItem.setBackgroundResource(R.drawable.primary10_50_1_bg)
+                    itemSelectedListener.onFirstCategoryItemSelected(item)
                 } else {
                     binding.clItem.setBackgroundResource(R.drawable.white_50_1_bg)
+                    itemSelectedListener.onFirstCategoryItemSelected(item)
                 }
 
             }

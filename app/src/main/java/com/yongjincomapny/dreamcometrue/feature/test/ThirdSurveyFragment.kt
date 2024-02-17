@@ -1,5 +1,6 @@
 package com.yongjincomapny.dreamcometrue.feature.test
 
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yongjincomapny.dreamcometrue.R
@@ -10,16 +11,30 @@ import com.yongjincomapny.dreamcometrue.common.view.setOnDebounceClickListener
 import com.yongjincomapny.dreamcometrue.databinding.FragmentThirdSurveyBinding
 import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.FirstCategoryAdapter
 import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.CategoryItem
+import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.FifthCategoryAdapter
+import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.FourthCategoryAdapter
 import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.OnItemSelectedListener
+import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.SecondCategoryAdapter
+import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.SixthCategoryAdapter
+import com.yongjincomapny.dreamcometrue.feature.test.adapter.category.ThirdCategoryAdapter
 
 class ThirdSurveyFragment : BaseFragment<FragmentThirdSurveyBinding>(
     R.layout.fragment_third_survey
 ), OnItemSelectedListener{
+    private var interestList = mutableListOf<String>()
+
     override fun init() {
         super.init()
+        val strongList = arguments?.getStringArray("strongList")
 
         binding.ivBack.setOnDebounceClickListener {
             findNavController().popBackStack()
+        }
+
+        binding.btnNext.setOnDebounceClickListener {
+            findNavController().navigate(R.id.action_thirdSurveyFragment_to_resultFragment, bundleOf(
+                "strongList" to strongList, "interestList" to interestList.toTypedArray()
+            ))
         }
 
         val firstItems = listOf(
@@ -84,28 +99,28 @@ class ThirdSurveyFragment : BaseFragment<FragmentThirdSurveyBinding>(
             GridSpacingItemDecoration(spanCount = 4, spacing = 8f.fromDpToPx())
         )
         binding.rvSecondCategory.layoutManager = GridLayoutManager(requireContext(),4)
-        binding.rvSecondCategory.adapter = FirstCategoryAdapter(secondItems, this)
+        binding.rvSecondCategory.adapter = SecondCategoryAdapter(secondItems, this)
         binding.rvSecondCategory.addItemDecoration(
             GridSpacingItemDecoration(spanCount = 4, spacing =8f.fromDpToPx())
         )
 
         binding.rvThirdCategory.layoutManager = GridLayoutManager(requireContext(),3)
-        binding.rvThirdCategory.adapter = FirstCategoryAdapter(thirdItems, this)
+        binding.rvThirdCategory.adapter = ThirdCategoryAdapter(thirdItems, this)
         binding.rvThirdCategory.addItemDecoration(
             GridSpacingItemDecoration(spanCount = 3, spacing = 8f.fromDpToPx())
         )
         binding.rvFourthCategory.layoutManager = GridLayoutManager(requireContext(),3)
-        binding.rvFourthCategory.adapter = FirstCategoryAdapter(fourthItems, this)
+        binding.rvFourthCategory.adapter = FourthCategoryAdapter(fourthItems, this)
         binding.rvFourthCategory.addItemDecoration(
             GridSpacingItemDecoration(spanCount = 3, spacing = 8f.fromDpToPx())
         )
         binding.rvFifthCategory.layoutManager = GridLayoutManager(requireContext(),3)
-        binding.rvFifthCategory.adapter = FirstCategoryAdapter(fifthItems, this)
+        binding.rvFifthCategory.adapter = FifthCategoryAdapter(fifthItems, this)
         binding.rvFifthCategory.addItemDecoration(
             GridSpacingItemDecoration(spanCount = 3, spacing = 8f.fromDpToPx())
         )
         binding.rvSixthCategory.layoutManager = GridLayoutManager(requireContext(),3)
-        binding.rvSixthCategory.adapter = FirstCategoryAdapter(sixthItems, this)
+        binding.rvSixthCategory.adapter = SixthCategoryAdapter(sixthItems, this)
         binding.rvSixthCategory.addItemDecoration(
             GridSpacingItemDecoration(spanCount = 3, spacing = 8f.fromDpToPx())
         )
@@ -113,26 +128,62 @@ class ThirdSurveyFragment : BaseFragment<FragmentThirdSurveyBinding>(
     }
 
     override fun onFirstCategoryItemSelected(item: CategoryItem) {
-
+        if (item.isSelected) {
+            interestList.add(item.text)
+            println("$interestList")
+        } else {
+            interestList.removeLast()
+            println("$interestList")
+        }
     }
 
     override fun onSecondCategoryItemSelected(item: CategoryItem) {
-        TODO("Not yet implemented")
+        if (item.isSelected) {
+            interestList.add(item.text)
+            println("$interestList")
+        } else {
+            interestList.removeLast()
+            println("$interestList")
+        }
     }
 
     override fun onThirdCategoryItemSelected(item: CategoryItem) {
-        TODO("Not yet implemented")
+        if (item.isSelected) {
+            interestList.add(item.text)
+            println("$interestList")
+        } else {
+            interestList.removeLast()
+            println("$interestList")
+        }
     }
 
     override fun onFourthCategoryItemSelected(item: CategoryItem) {
-        TODO("Not yet implemented")
+        if (item.isSelected) {
+            interestList.add(item.text)
+            println("$interestList")
+        } else {
+            interestList.removeLast()
+            println("$interestList")
+        }
     }
 
     override fun onFifthCategoryItemSelected(item: CategoryItem) {
-        TODO("Not yet implemented")
+        if (item.isSelected) {
+            interestList.add(item.text)
+            println("$interestList")
+        } else {
+            interestList.removeLast()
+            println("$interestList")
+        }
     }
 
     override fun onSixthCategoryItemSelected(item: CategoryItem) {
-        TODO("Not yet implemented")
+        if (item.isSelected) {
+            interestList.add(item.text)
+            println("$interestList")
+        } else {
+            interestList.removeLast()
+            println("$interestList")
+        }
     }
 }

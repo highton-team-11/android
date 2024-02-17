@@ -1,5 +1,6 @@
 package com.yongjincomapny.dreamcometrue.feature.test
 
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +17,8 @@ import com.yongjincomapny.dreamcometrue.feature.test.adapter.strongpoint.StrongP
 class SecondSurveyFragment : BaseFragment<FragmentSecondSurveyBinding>(
     R.layout.fragment_second_survey
 ), OnItemSelectedListener {
+    private var strongList = mutableListOf<String>()
+
     override fun init() {
         super.init()
 
@@ -24,7 +27,7 @@ class SecondSurveyFragment : BaseFragment<FragmentSecondSurveyBinding>(
         }
 
         val recyclerView: RecyclerView = binding.rvStrongPoint
-        recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
         val items = listOf(
             StrongPointItem("신체 & 운동"),
@@ -45,11 +48,19 @@ class SecondSurveyFragment : BaseFragment<FragmentSecondSurveyBinding>(
         )
 
         binding.btnNext.setOnDebounceClickListener {
-            findNavController().navigate(R.id.action_secondSurveyFragment_to_thirdSurveyFragment)
+            findNavController().navigate(R.id.action_secondSurveyFragment_to_thirdSurveyFragment, bundleOf(
+                "strongList" to strongList.toTypedArray()
+            ))
         }
     }
 
     override fun onItemSelected(item: StrongPointItem) {
-
+        if (item.isSelected) {
+           strongList.add(item.text)
+            println("$strongList")
+        } else {
+            strongList.removeLast()
+            println("$strongList")
+        }
     }
 }

@@ -13,7 +13,14 @@
     <string name="second_order">2/3</string>
     <string name="pick_strong_point">자신있는 강점을 골라주세요.</string>
     <string name="can_four_selection">4개까지 복수 선택이 가능해요</string>
+
+
+    <!-- third survey -->
     <string name="can_multiple_selection">복수 선택이 가능해요</string>
     <string name="select_favor_category">관심있는 분야를 골라주세요</string>
     <string name="third_order">3/3</string>
+
+    <!-- survey result -->
+    <string name="survey_result">설문 결과</string>
+    <string name="nice_fit_job">적성에 잘 맞는 직업들이에요!</string>
 </resources>
