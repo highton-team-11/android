@@ -1,5 +1,6 @@
 package com.yongjincomapny.dreamcometrue.feature.home.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -9,17 +10,18 @@ import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.databinding.ItemHomeImageDetailBinding
 
 class DetailImageAdapter(
-    private val imageList: List<Int?>,
+    private val imageList: List<Int>,
     private val itemClick: (Int) -> Unit,
 ) : RecyclerView.Adapter<DetailImageAdapter.ImageDetailViewHolder>() {
     inner class ImageDetailViewHolder(private val binding: ItemHomeImageDetailBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Int?) {
-            Glide.with(binding.root.context)
+        fun bind(item: Int) {
+            Log.d("banner recyclerview", "bind: $item")
+            Glide.with(itemView)
                 .load(item)
                 .into(binding.imgUrl)
 
-            binding.root.setOnClickListener { itemClick(item!!) }
+            binding.root.setOnClickListener { itemClick(item) }
         }
     }
 
