@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/firstSurveyFragment">
+
+
+    <fragment
+        android:id="@+id/firstSurveyFragment"
+        android:name="com.yongjincomapny.dreamcometrue.feature.test.FirstSurveyFragment"
+        android:label="FirstSurveyFragment" >
+        <action
+            android:id="@+id/action_firstSurveyFragment_to_secondSurveyFragment"
+            app:destination="@id/secondSurveyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/secondSurveyFragment"
+        android:name="com.yongjincomapny.dreamcometrue.feature.test.SecondSurveyFragment"
+        android:label="SecondSurveyFragment" >
+        <action
+            android:id="@+id/action_secondSurveyFragment_to_thirdSurveyFragment"
+            app:destination="@id/thirdSurveyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/thirdSurveyFragment"
+        android:name="com.yongjincomapny.dreamcometrue.feature.test.ThirdSurveyFragment"
+        android:label="ThirdSurveyFragment" />
+</navigation>

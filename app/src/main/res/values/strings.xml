@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">LUCY</string>
+
+    <string name="next">다음</string>
+
+    <!-- first survey -->
+    <string name="enter_name">이름을 입력해주세요</string>
+    <string name="name">이름</string>
+    <string name="first_order">1/3</string>
+
+
+    <!-- second survey -->
+    <string name="second_order">2/3</string>
+    <string name="pick_strong_point">자신있는 강점을 골라주세요.</string>
+    <string name="can_four_selection">4개까지 복수 선택이 가능해요</string>
+    <string name="can_multiple_selection">복수 선택이 가능해요</string>
+    <string name="select_favor_category">관심있는 분야를 골라주세요</string>
+    <string name="third_order">3/3</string>
 </resources>
