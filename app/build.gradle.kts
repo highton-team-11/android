@@ -41,11 +41,12 @@ android {
 }
 
 dependencies {
-
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation(libs.navigation.ui)
+    implementation(libs.navigation)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
