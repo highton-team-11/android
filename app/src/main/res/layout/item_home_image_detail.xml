@@ -11,9 +11,8 @@
             android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:cardCornerRadius="5dp"
             app:cardElevation="0dp"
-            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintDimensionRatio="w,250:360"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -23,7 +22,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
                 tools:src="@drawable/ic_profile" />
 
         </androidx.cardview.widget.CardView>
