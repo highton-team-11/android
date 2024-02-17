@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/firstSurveyFragment"
         android:name="com.yongjincomapny.dreamcometrue.feature.test.FirstSurveyFragment"
-        android:label="FirstSurveyFragment" >
+        android:label="FirstSurveyFragment">
         <action
             android:id="@+id/action_firstSurveyFragment_to_secondSurveyFragment"
             app:destination="@id/secondSurveyFragment"
@@ -45,4 +45,17 @@
         android:id="@+id/resultFragment"
         android:name="com.yongjincomapny.dreamcometrue.feature.result.ResultFragment"
         android:label="ResultFragment" />
+        android:id="@+id/homeFragment"
+        android:name="com.yongjincomapny.dreamcometrue.feature.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="com.yongjincomapny.dreamcometrue.PostDetailFragment"
+        android:label="PostDetailFragment">
+    </fragment>
 </navigation>
