@@ -34,15 +34,13 @@ class StrongPointAdapter(
             binding.clItem.setOnClickListener {
                 item.isSelected = !item.isSelected
                 if (item.isSelected) {
+                    itemSelectedListener.onItemSelected(item)
                     binding.clItem.setBackgroundResource(R.drawable.primary10_50_1_bg)
-                    itemSelectedListener.onItemSelected(item)
                 } else {
-                    binding.clItem.setBackgroundResource(R.drawable.white_50_1_bg)
                     itemSelectedListener.onItemSelected(item)
+                    binding.clItem.setBackgroundResource(R.drawable.white_50_1_bg)
                 }
-
             }
-            binding.executePendingBindings()
         }
     }
 }

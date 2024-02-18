@@ -16,8 +16,7 @@ class DetailImageAdapter(
     inner class ImageDetailViewHolder(private val binding: ItemHomeBannerImageBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Int) {
-            Log.d("banner recyclerview", "bind: $item")
-            Glide.with(itemView)
+            Glide.with(itemView.context)
                 .load(item)
                 .into(binding.imgUrl)
 

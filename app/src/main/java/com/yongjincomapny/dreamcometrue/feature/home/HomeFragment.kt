@@ -132,6 +132,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             }
         }
         binding.rvJob.adapter = newHomePostJobAdapter
+
         val imageAdapter = DetailImageAdapter(
             listOf(R.drawable.banner1, R.drawable.banner2, R.drawable.banner3)
         ) {
