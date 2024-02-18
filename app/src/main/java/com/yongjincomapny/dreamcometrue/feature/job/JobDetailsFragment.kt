@@ -25,17 +25,17 @@ class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>(
             findNavController().popBackStack()
         }
 
-        lifecycleScope.launch {
+       /* lifecycleScope.launch {
             runCatching {
                 jobApi.fetchRoadMap(name)
             }.onSuccess {
-
-                binding.tvRoadmap.text = HtmlCompat.fromHtml(
+                val roadMapBody = HtmlCompat.fromHtml(
                     it.choices.first().message.content,
                     HtmlCompat.FROM_HTML_MODE_LEGACY
                 )
-            }
-        }
+
+=            }
+        }*/
 
         lifecycleScope.launch {
             runCatching {
