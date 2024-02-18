@@ -27,11 +27,100 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private var newHomePostAdapter: NewHomePostAdapter? = null
     private var newHomePostTwoAdapter: NewHomePostTwoAdapter? = null
     private var newHomePostThreeAdapter: NewHomePostThreeAdapter? = null
+    private var newHomePostJobAdapter: DetailImageAdapter? = null
 
     override fun init() {
         super.init()
 
         val postApi = RetrofitClient.postApi()
+
+        val jobList = listOf<Int>(R.drawable.mask_group, R.drawable.maskgroup_1, R.drawable.maskgroup_2, R.drawable.maskgroup3, R.drawable.maskgroup4, R.drawable.maskgroup5, R.drawable.maskgroup6, R.drawable.maskgroup7, R.drawable.maskgroup8, R.drawable.maskgroup9)
+        newHomePostJobAdapter = DetailImageAdapter(jobList) {
+            when (it) {
+                R.drawable.mask_group -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do;jsessionid=9E1C454AE9F1D9CE740D72135177FC80")
+                        )
+                    )
+                }
+
+                R.drawable.maskgroup_1 -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do;jsessionid=9E1C454AE9F1D9CE740D72135177FC80")
+                        )
+                    )
+                }
+
+                R.drawable.maskgroup_2 -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do;jsessionid=9E1C454AE9F1D9CE740D72135177FC80")
+                        )
+                    )
+                }
+                R.drawable.maskgroup3 -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do")
+                        )
+                    )
+                }
+                R.drawable.maskgroup4 -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do")
+                        )
+                    )
+                }
+                R.drawable.maskgroup5 -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do")
+                        )
+                    )
+                }
+                R.drawable.maskgroup6 -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do")
+                        )
+                    )
+                }
+                R.drawable.maskgroup7 -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do")
+                        )
+                    )
+                }
+                R.drawable.maskgroup8 -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do")
+                        )
+                    )
+                }
+                R.drawable.maskgroup9 -> {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.career.go.kr/cnet/front/counsel/jinsolView.do")
+                        )
+                    )
+                }
+            }
+        }
 
         lifecycleScope.launch {
             runCatching {
@@ -42,7 +131,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
                 newHomePostThreeAdapter?.setData(it.filter { it.indexa == 2 })
             }
         }
-
+        binding.rvJob.adapter = newHomePostJobAdapter
         val imageAdapter = DetailImageAdapter(
             listOf(R.drawable.banner1, R.drawable.banner2, R.drawable.banner3)
         ) {
