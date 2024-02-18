@@ -10,7 +10,6 @@ import android.view.View
 import androidx.core.net.toUri
 import androidx.core.text.HtmlCompat
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
 import com.yongjincomapny.dreamcometrue.data.remote.api.RetrofitClient
@@ -23,7 +22,7 @@ class PostDetailFragment : BaseFragment<FragmentPostDetailBinding>(R.layout.frag
 
     override fun init() {
         super.init()
-        val name = arguments?.getString("name") ?: ""
+        val name = arguments?.getString("title") ?: ""
 
         val postApi = RetrofitClient.postApi()
 
@@ -31,14 +30,14 @@ class PostDetailFragment : BaseFragment<FragmentPostDetailBinding>(R.layout.frag
             runCatching {
                 postApi.fetchPostDetail(name)
             }.onSuccess {
-                Glide.with(requireContext())
+                /*Glide.with(requireContext())
                     .load(it.cdnLink.toUri())
-                    .into(binding.ivProfile)
+                    .into(binding.ivProfile)*/
 
-                binding.tvTitle.text = it.title
-                displayHtml(it.htmlData)
+                //binding.tvTitle.text = it.title
+                displayHtml(it)
             }.onFailure {
-
+                Log.d("TEST", it.toString())
             }
         }
     }
@@ -49,7 +48,8 @@ class PostDetailFragment : BaseFragment<FragmentPostDetailBinding>(R.layout.frag
 
         // Using Html framework to parse html
         val styledText =
-            HtmlCompat.fromHtml(source, HtmlCompat.FROM_HTML_MODE_COMPACT, imageGetter, null
+            HtmlCompat.fromHtml(
+                source, HtmlCompat.FROM_HTML_MODE_COMPACT, imageGetter, null
             )
 
         replaceQuoteSpans(styledText as Spannable)

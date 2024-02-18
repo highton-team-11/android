@@ -11,6 +11,7 @@ import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.common.view.setOnDebounceClickListener
 import com.yongjincomapny.dreamcometrue.data.remote.response.FetchRecommendJobsResponse
 import com.yongjincomapny.dreamcometrue.databinding.ItemJobBinding
+import java.util.UUID
 
 class ResultAdapter(val fragment: String) :
     ListAdapter<FetchRecommendJobsResponse, ResultAdapter.ResultItemViewHolder>(diffUtil) {
@@ -35,6 +36,24 @@ class ResultAdapter(val fragment: String) :
 
     fun setData(data: List<FetchRecommendJobsResponse>) {
         submitList(data)
+    }
+
+    fun addData(name: String) {
+        currentList.add(
+            FetchRecommendJobsResponse(
+                uuid = UUID.randomUUID(),
+                name = name,
+                description = "",
+                salary = "",
+                workAndLife = "",
+                socialContribution = "",
+                coreCompetencies = FetchRecommendJobsResponse.CoreCompetency(
+                    id = UUID.randomUUID(),
+                    name = "",
+                    jobs = emptyList(),
+                ),
+            )
+        )
     }
 
     fun addData(data: List<FetchRecommendJobsResponse>) {
