@@ -21,4 +21,6 @@ object RetrofitClient {
         .build()
 
     fun getJobApi(): JobApi = retrofit.create(JobApi::class.java)
+
+    fun postApi(): PostApi = retrofit.create(PostApi::class.java)
 }
