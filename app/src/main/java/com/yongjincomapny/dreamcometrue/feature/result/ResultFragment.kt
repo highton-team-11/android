@@ -1,7 +1,9 @@
 package com.yongjincomapny.dreamcometrue.feature.result
 
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
@@ -24,11 +26,15 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(
         val jobApi = RetrofitClient.getJobApi()
 
         binding.rvJob.layoutManager = LinearLayoutManager(requireContext())
-        resultAdapter = ResultAdapter()
+        resultAdapter = ResultAdapter("result")
         binding.rvJob.adapter = resultAdapter
 
         binding.btnNext.setOnDebounceClickListener {
             //TODO: Home으로 navigate하는 코드.
+            findNavController().navigate(
+                R.id.action_resultFragment_to_homeFragment,
+                bundleOf("strongList" to strongList, "interestList" to interestList)
+            )
         }
 
         lifecycleScope.launch() {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
     app:startDestination="@id/firstSurveyFragment">
 
@@ -44,14 +45,14 @@
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.yongjincomapny.dreamcometrue.feature.result.ResultFragment"
-        android:label="ResultFragment" >
+        android:label="ResultFragment">
         <action
             android:id="@+id/action_resultFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_resultFragment_to_jobDetailsFragment"
             app:destination="@+id/jobDetailsFragment" />
@@ -70,11 +71,21 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_myPageFragment"
+            app:destination="@+id/myPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/postDetailFragment"
         android:name="com.yongjincomapny.dreamcometrue.PostDetailFragment"
-        android:label="PostDetailFragment">
+        android:label="PostDetailFragment" />
+    <fragment
+        android:id="@+id/myPageFragment"
+        android:name="com.yongjincomapny.dreamcometrue.feature.mypage.MyPageFragment"
+        tools:layout="MyPageFragment">
+        <action
+            android:id="@+id/action_myPageFragment_to_jobDetailFragment"
+            app:destination="@+id/jobDetailsFragment"/>¬
     </fragment>
 </navigation>

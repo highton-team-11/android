@@ -3,7 +3,6 @@ package com.yongjincomapny.dreamcometrue.feature.result.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.navigation.NavHostController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -13,7 +12,7 @@ import com.yongjincomapny.dreamcometrue.common.view.setOnDebounceClickListener
 import com.yongjincomapny.dreamcometrue.data.remote.response.FetchRecommendJobsResponse
 import com.yongjincomapny.dreamcometrue.databinding.ItemJobBinding
 
-class ResultAdapter() :
+class ResultAdapter(val fragment: String) :
     ListAdapter<FetchRecommendJobsResponse, ResultAdapter.ResultItemViewHolder>(diffUtil) {
 
     override fun onCreateViewHolder(
@@ -79,7 +78,10 @@ class ResultAdapter() :
             binding.root.setOnDebounceClickListener {
                 val navController = Navigation.findNavController(itemView)
                 navController.navigate(
-                    R.id.action_resultFragment_to_jobDetailsFragment,
+                    when (fragment) {
+                        "result" -> R.id.action_resultFragment_to_jobDetailsFragment
+                        else -> R.id.action_myPageFragment_to_jobDetailFragment
+                    },
                     bundleOf("name" to item.name)
                 )
             }
