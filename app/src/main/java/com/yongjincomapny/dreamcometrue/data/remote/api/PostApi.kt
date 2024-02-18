@@ -12,7 +12,7 @@ interface PostApi {
     @GET("api/v1/export/{name}")
     suspend fun fetchPostDetail(
         @Path("name") name: String
-    ): FetchPostDetailResponse
+    ): String
 }
 
 
