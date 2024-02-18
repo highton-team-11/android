@@ -12,6 +12,7 @@ import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.databinding.ItemHomePostBinding
 import com.yongjincomapny.dreamcometrue.feature.home.model.GetAllPostResponse
 
+@Deprecated("end")
 class HomePostAdapter(
     private val imageList: List<GetAllPostResponse>,
 ) : RecyclerView.Adapter<HomePostAdapter.HomePostViewHolder>() {
