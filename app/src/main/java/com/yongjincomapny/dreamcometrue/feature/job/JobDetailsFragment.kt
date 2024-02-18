@@ -16,7 +16,7 @@ class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>(
 ) {
     override fun init() {
         super.init()
-        val name = arguments?.getString("name") ?: ""
+        val name = arguments?.getString("title") ?: ""
 
         val jobApi = RetrofitClient.getJobApi()
 
