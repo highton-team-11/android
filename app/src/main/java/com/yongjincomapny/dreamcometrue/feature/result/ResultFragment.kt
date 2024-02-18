@@ -2,7 +2,6 @@ package com.yongjincomapny.dreamcometrue.feature.result
 
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
