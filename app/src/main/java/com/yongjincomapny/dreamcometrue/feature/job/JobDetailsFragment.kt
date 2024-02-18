@@ -1,6 +1,7 @@
 package com.yongjincomapny.dreamcometrue.feature.job
 
 import android.util.Log
+import androidx.core.text.HtmlCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.yongjincomapny.dreamcometrue.R
@@ -22,6 +23,18 @@ class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>(
 
         binding.ivJobDetailsBack.setOnDebounceClickListener {
             findNavController().popBackStack()
+        }
+
+        lifecycleScope.launch {
+            runCatching {
+                jobApi.fetchRoadMap(name)
+            }.onSuccess {
+
+                binding.tvRoadmap.text = HtmlCompat.fromHtml(
+                    it.choices.first().message.content,
+                    HtmlCompat.FROM_HTML_MODE_LEGACY
+                )
+            }
         }
 
         lifecycleScope.launch {

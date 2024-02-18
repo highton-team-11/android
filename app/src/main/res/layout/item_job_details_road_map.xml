@@ -1,60 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center_vertical"
-    android:orientation="horizontal">
+<layout>
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="8dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_road_map_1"
-                android:layout_width="1dp"
-                android:layout_height="0dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1" />
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_road_map_2"
-                android:layout_width="1dp"
-                android:layout_height="0dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/white_primary10_50_1_bg" />
-
-    </FrameLayout>
-
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="6dp">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_road_map_step"
-            style="@style/medium_14"
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_road_map_1"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_road_map_2"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/white_primary10_50_1_bg" />
+
+        </FrameLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/white_8_1_bg"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="10dp"
-            android:text="설명설명설명설명"
-            android:textColor="#FF666666" />
-    </LinearLayout>
+            android:paddingVertical="6dp">
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/tv_road_map_step"
+                style="@style/medium_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_8_1_bg"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                android:text="설명설명설명설명"
+                android:textColor="#FF666666" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
