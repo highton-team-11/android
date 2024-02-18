@@ -15,7 +15,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yongjincomapny.dreamcometrue.R
 import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
-import com.yongjincomapny.dreamcometrue.data.api.RetrofitClient
+import com.yongjincomapny.dreamcometrue.data.remote.api.RetrofitClient
 import com.yongjincomapny.dreamcometrue.databinding.FragmentHomeBinding
 import com.yongjincomapny.dreamcometrue.feature.ImageGetter
 import com.yongjincomapny.dreamcometrue.feature.home.adapter.DetailImageAdapter
