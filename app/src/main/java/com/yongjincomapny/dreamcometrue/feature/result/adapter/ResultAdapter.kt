@@ -2,9 +2,14 @@ package com.yongjincomapny.dreamcometrue.feature.result.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.NavHostController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.yongjincomapny.dreamcometrue.R
+import com.yongjincomapny.dreamcometrue.common.view.setOnDebounceClickListener
 import com.yongjincomapny.dreamcometrue.data.remote.response.FetchRecommendJobsResponse
 import com.yongjincomapny.dreamcometrue.databinding.ItemJobBinding
 
@@ -70,7 +75,14 @@ class ResultAdapter() :
 
         fun bind(item: FetchRecommendJobsResponse) {
             binding.tvJobName.text = item.name
-        }
 
+            binding.root.setOnDebounceClickListener {
+                val navController = Navigation.findNavController(itemView)
+                navController.navigate(
+                    R.id.action_resultFragment_to_jobDetailsFragment,
+                    bundleOf("name" to item.name)
+                )
+            }
+        }
     }
 }

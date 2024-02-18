@@ -48,15 +48,17 @@ class SecondSurveyFragment : BaseFragment<FragmentSecondSurveyBinding>(
         )
 
         binding.btnNext.setOnDebounceClickListener {
-            findNavController().navigate(R.id.action_secondSurveyFragment_to_thirdSurveyFragment, bundleOf(
-                "strongList" to strongList.toTypedArray()
-            ))
+            findNavController().navigate(
+                R.id.action_secondSurveyFragment_to_thirdSurveyFragment, bundleOf(
+                    "strongList" to strongList.toTypedArray()
+                )
+            )
         }
     }
 
     override fun onItemSelected(item: StrongPointItem) {
         if (item.isSelected) {
-           strongList.add(item.text)
+            strongList.add(item.text)
         } else {
             strongList.removeLast()
         }

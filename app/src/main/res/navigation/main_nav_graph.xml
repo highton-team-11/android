@@ -15,31 +15,31 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/secondSurveyFragment"
         android:name="com.yongjincomapny.dreamcometrue.feature.test.SecondSurveyFragment"
-        android:label="SecondSurveyFragment" >
+        android:label="SecondSurveyFragment">
         <action
             android:id="@+id/action_secondSurveyFragment_to_thirdSurveyFragment"
             app:destination="@id/thirdSurveyFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/thirdSurveyFragment"
         android:name="com.yongjincomapny.dreamcometrue.feature.test.ThirdSurveyFragment"
-        android:label="ThirdSurveyFragment" >
+        android:label="ThirdSurveyFragment">
         <action
             android:id="@+id/action_thirdSurveyFragment_to_resultFragment"
             app:destination="@id/resultFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -52,7 +52,14 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_resultFragment_to_jobDetailsFragment"
+            app:destination="@+id/jobDetailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/jobDetailsFragment"
+        android:name="com.yongjincomapny.dreamcometrue.feature.job.JobDetailsFragment"
+        android:label="JobDetailsFragment" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.yongjincomapny.dreamcometrue.feature.home.HomeFragment"
@@ -64,12 +71,10 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-
     </fragment>
     <fragment
         android:id="@+id/postDetailFragment"
         android:name="com.yongjincomapny.dreamcometrue.PostDetailFragment"
         android:label="PostDetailFragment">
     </fragment>
-
 </navigation>

@@ -4,6 +4,7 @@ import com.yongjincomapny.dreamcometrue.data.remote.request.FetchRecommendJobsRe
 import com.yongjincomapny.dreamcometrue.data.remote.response.FetchJobDetailResponse
 import com.yongjincomapny.dreamcometrue.data.remote.response.FetchRecommendJobsResponse
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
@@ -13,7 +14,7 @@ interface JobApi {
         @Body fetchRecommendJobsRequest: FetchRecommendJobsRequest,
     ): List<FetchRecommendJobsResponse>
 
-    @POST("/api/v1/job/{name}")
+    @GET("/api/v1/job/{name}")
     suspend fun fetchJobDetail(
         @Path("name") name: String
     ) : FetchJobDetailResponse
