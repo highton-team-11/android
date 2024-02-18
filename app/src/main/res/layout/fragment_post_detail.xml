@@ -13,14 +13,6 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/iv_profile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ic_back"
-                tools:src="@drawable/banner2" />
-
-            <ImageView
                 android:id="@+id/ic_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,50 +22,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_title"
-                style="@style/medium_18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
-
-            <TextView
-                android:id="@+id/tv_writer"
-                style="@style/medium_14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="10dp"
-                android:text="@string/writer"
-                app:layout_constraintBottom_toTopOf="@id/divider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
-
-            <TextView
-                android:id="@+id/tv_create_at"
-                style="@style/medium_14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:text="@string/date"
-                app:layout_constraintBottom_toTopOf="@id/divider"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray90"
-                app:layout_constraintTop_toBottomOf="@id/tv_writer" />
 
             <TextView
                 android:id="@+id/tv_content"
@@ -85,7 +33,7 @@
                 android:text="@string/content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider" />
+                app:layout_constraintTop_toBottomOf="@+id/ic_back" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

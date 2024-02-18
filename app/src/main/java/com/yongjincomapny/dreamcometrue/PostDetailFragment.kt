@@ -10,8 +10,10 @@ import android.view.View
 import androidx.core.net.toUri
 import androidx.core.text.HtmlCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.yongjincomapny.dreamcometrue.common.base.BaseFragment
+import com.yongjincomapny.dreamcometrue.common.view.setOnDebounceClickListener
 import com.yongjincomapny.dreamcometrue.data.remote.api.RetrofitClient
 import com.yongjincomapny.dreamcometrue.databinding.FragmentPostDetailBinding
 import com.yongjincomapny.dreamcometrue.feature.ImageGetter
@@ -25,6 +27,10 @@ class PostDetailFragment : BaseFragment<FragmentPostDetailBinding>(R.layout.frag
         val name = arguments?.getString("title") ?: ""
 
         val postApi = RetrofitClient.postApi()
+
+        binding.icBack.setOnDebounceClickListener {
+            findNavController().popBackStack()
+        }
 
         lifecycleScope.launch {
             runCatching {
